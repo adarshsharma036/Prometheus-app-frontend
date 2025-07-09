@@ -1,4 +1,4 @@
-const baseUrl = 'https://your-backend-url.onrender.com'; // Change this after deployment
+const baseUrl = 'https://prometheus-app.onrender.com'; // Change this after deployment
 
 document.getElementById("signupForm").onsubmit = async (e) => {
   e.preventDefault();
