@@ -1,14 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+  </style>
+</head>
 <body>
-  <h2>Your Profile</h2>
-  <div id="profile"></div>
+  <div class="card">
+    <h2>Welcome, <span id="name"></span>!</h2>
+    <p>Email: <span id="email"></span></p>
+  </div>
 
   <script>
     const user = JSON.parse(localStorage.getItem("user"));
-    if (!user) {
-      window.location.href = "index.html";
-    } else {
-      document.getElementById("profile").innerHTML =
-        `<p>Name: ${user.name}</p><p>Email: ${user.email}</p>`;
-    }
+    if (!user) window.location.href = "index.html";
+    document.getElementById("name").innerText = user.name;
+    document.getElementById("email").innerText = user.email;
   </script>
 </body>
+</html>
